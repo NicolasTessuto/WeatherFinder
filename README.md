@@ -1,3 +1,3 @@
 # WeatherSense
-WeatherSense an free API
-lets thalk about the weather!
+WeatherSense a free API
+Let's talk about the weather!
