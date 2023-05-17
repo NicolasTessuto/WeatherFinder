@@ -1,4 +1,4 @@
-package com.WeatherSense.WeatherSenseAPI.DTO;
+package com.weathersense.weathersenseapi.dto;
 
 public record City(String name, String lat, String lon, String state) {
 

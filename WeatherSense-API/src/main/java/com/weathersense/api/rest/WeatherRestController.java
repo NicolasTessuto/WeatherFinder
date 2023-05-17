@@ -1,7 +1,7 @@
-package com.WeatherSense.WeatherSenseAPI.Rest;
+package com.weathersense.weathersenseapi.rest;
 
 
-import com.WeatherSense.WeatherSenseAPI.DTO.City;
+import com.weathersense.weathersenseapi.dto.City;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
