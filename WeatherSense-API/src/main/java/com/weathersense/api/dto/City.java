@@ -2,37 +2,49 @@ package com.weathersense.api.dto;
 
 
 public class City {
-    private String name;
-    private String state;
+    private String cityName;
+    private String cityState;
     private String lat;
     private String lon;
     private String temperature;
+    private String windspeed;
+    private String isDay;
 
     public City() {
     }
 
-    public City(String name, String state, String lat, String lon, String temperature) {
-        this.name = name;
-        this.state = state;
+    public City(String cityName, String cityState, String lat, String lon, String temperature, String windspeed, String isDay) {
+        this.cityName = cityName;
+        this.cityState = cityState;
         this.lat = lat;
         this.lon = lon;
         this.temperature = temperature;
+        this.windspeed = windspeed;
+        this.isDay = isDay;
     }
 
-    public String getName() {
-        return name;
+    public String getIsDay() {
+        return isDay;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIsDay(String isDay) {
+        this.isDay = isDay;
     }
 
-    public String getState() {
-        return state;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getCityState() {
+        return cityState;
+    }
+
+    public void setCityState(String cityState) {
+        this.cityState = cityState;
     }
 
     public String getLat() {
@@ -57,5 +69,13 @@ public class City {
 
     public void setTemperature(String temperature) {
         this.temperature = temperature;
+    }
+
+    public String getWindspeed() {
+        return windspeed;
+    }
+
+    public void setWindspeed(String windspeed) {
+        this.windspeed = windspeed;
     }
 }
