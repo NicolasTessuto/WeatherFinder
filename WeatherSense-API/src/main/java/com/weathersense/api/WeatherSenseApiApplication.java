@@ -1,4 +1,4 @@
-package com.weathersense.weathersenseapi;
+package com.weathersense.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
