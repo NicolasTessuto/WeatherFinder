@@ -35,7 +35,7 @@ public class WeatherRestController {
         Map<String, String> paramsQ = new HashMap<>();
         paramsQ.put("q", "{" + cityName + "," + cityState + "}");
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> geoCodeResponse = restTemplate.getForEntity(geocodeUrl, String.class, paramsQ);
+        ResponseEntity<String> geoCodeResponse = restTemplate.getForEntity(GeocodeUrl, String.class, paramsQ);
 
         return generateMeteoResponse(cityName, cityState, geoCodeResponse, restTemplate);
     }
@@ -48,22 +48,15 @@ public class WeatherRestController {
         Map<String, String> paramsLatLon = new HashMap<>();
         paramsLatLon.put("lat", lat);
         paramsLatLon.put("lon", lon);
-        ResponseEntity<String> meteoResponse = restTemplate.getForEntity(openMeteoUrl, String.class, paramsLatLon);
+        ResponseEntity<String> meteoResponse = restTemplate.getForEntity(OpenMeteoUrl, String.class, paramsLatLon);
         jsonNode = objectMapper.readTree(meteoResponse.getBody());
         String temperature = jsonNode.get("current_weather").get("temperature").asText();
         String windSpeed = jsonNode.get("current_weather").get("windspeed").asText();
         String isDay = jsonNode.get("current_weather").get("is_day").asText();
-        return generateCityObject(cityName, cityState, lat, lon, temperature, windSpeed, isDay);
-
-    }
-
-    public City generateCityObject(String cityName, String cityState, String lat, String lon, String temperature, String windSpeed, String isDay ){
 
         City city = new City(cityName, cityState, lat, lon, temperature, windSpeed, isDay);
         return city;
+
     }
-
-
-
-
+    
 }
